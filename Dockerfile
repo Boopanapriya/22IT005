@@ -1,21 +1,14 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Use an official Python runtime as a base image
+FROM python:3.9
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy all files to the container
 COPY . /app
 
-# Install Flask
-RUN pip install flask
+# Install necessary dependencies
+RUN pip install scikit-learn joblib
 
-# Expose the port Flask runs on
-EXPOSE 5000
-
-# Define environment variable
-ENV FLASK_APP=personal-api.py
-
-# Run the application
-CMD ["python", "personal-api.py"]
-
+# Run the script
+CMD ["python", "ml-model.py"]
