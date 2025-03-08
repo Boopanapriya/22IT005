@@ -1,4 +1,4 @@
-name: hello-world-boopanapriya
+name: docker-pipeline-boopanapriya
 on: push
 jobs:
   my-job:
