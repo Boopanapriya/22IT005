@@ -1,8 +1,17 @@
 name: docker-pipeline-boopanapriya
 on: push
 jobs:
-  my-job:
+  docker-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print your name
-        run: echo "Hello World! - Boopanapriya"
+      - name: Print your Register Number
+        run: echo "Hello World! - 22IT005"
+        
+      - name: Checkout 
+        uses: actions/checkout@v4
+
+      - name: Docker Build
+        run: docker build -t boopanapriya/ml-model-22it005 .
+
+      - name: Docker Images
+        run: docker images 
